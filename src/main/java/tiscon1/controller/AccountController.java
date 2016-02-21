@@ -20,6 +20,7 @@ import tiscon1.model.UserPrincipal;
 import tiscon1.repository.CustomerRepository;
 
 import javax.servlet.http.HttpSession;
+import java.security.*;
 
 /**
  * @author kawasima
@@ -40,7 +41,7 @@ public class AccountController {
                 .where((Specification<Customer>) (root, query, cb) ->
                         cb.equal(root.get("name"), form.getAccount()))
                 .and((root, query, cb) ->
-                        cb.equal(root.get("password"), form.getPassword())
+                        cb.equal(root.get("password"), toEncryptedSha256(form.getPassword()))
                 ));
         if (customer != null) {
             session.setAttribute("principal", new UserPrincipal(customer.getName()));
@@ -73,7 +74,7 @@ public class AccountController {
         if (bindingResult.hasErrors()) {
             return "newAccountOrSignIn";
         }
-        Customer customer = new Customer(form.getName(), form.getEmail(), form.getPassword());
+        Customer customer = new Customer(form.getName(), form.getEmail(), toEncryptedSha256(form.getPassword()));
         customerRepository.save(customer);
         UserPrincipal principal = new UserPrincipal(form.getName());
         session.setAttribute("principal", principal);
@@ -133,4 +134,20 @@ public class AccountController {
         }
     }
 
+    private String toEncryptedSha256(String value) {
+        MessageDigest md = null;
+        StringBuilder sb = null;
+        try {
+            md = MessageDigest.getInstance("SHA-256");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        md.update(value.getBytes());
+        sb = new StringBuilder();
+        for (byte b : md.digest()) {
+            String hex = String.format("%02x", b);
+            sb.append(hex);
+        }
+        return sb.toString();
+    }
 }
