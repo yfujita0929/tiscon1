@@ -14,7 +14,7 @@
 
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="box">
                         <h1>New account</h1>
 
@@ -58,34 +58,6 @@
                         </form>
                     </div>
                 </div>
-
-                <div class="col-md-6">
-                    <div class="box">
-                        <h1>Login</h1>
-
-                        <p class="lead">Already our customer?</p>
-                        <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies
-                            mi vitae est. Mauris placerat eleifend leo.</p>
-
-                        <hr>
-
-                        <form action="/login" method="post">
-                            <div class="form-group">
-                                <label for="name">Account</label>
-                                <input type="text" name="account" class="form-control" id="account">
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" name="password" class="form-control" id="password">
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-
             </div>
             <!-- /.container -->
         </div>
