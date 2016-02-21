@@ -57,7 +57,7 @@
             <div class="col-md-6" data-animate="fadeInDown">
                 <ul class="menu">
                     <#if principal??>
-                    <li><a href="/my/account?id=${customer.id}" class="layout-menu-font">My Account</a></li>
+                    <li><a href="/my/account?id=$" class="layout-menu-font">My Account</a></li>
                     <li class="dropdown yamm-fw">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">${principal.name}さん<b class="caret"></b></a>
                         <ul class="dropdown-menu">
