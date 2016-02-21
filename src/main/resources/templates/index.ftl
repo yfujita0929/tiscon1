@@ -74,7 +74,7 @@ _________________________________________________________ -->
         <div class="box">
             <div class="container">
                 <div class="col-md-12">
-                    <h2>Top Movies</h2>
+                    <h2><a href="/category?genreId=33&subgenreId=">Top Movies</a></h2>
                 </div>
             </div>
         </div>
@@ -124,7 +124,7 @@ _________________________________________________________ -->
         <div class="box">
             <div class="container">
                 <div class="col-md-12">
-                    <h2>Top Music</h2>
+                    <h2><a href="/category?genreId=33&subgenreId=">Top Music</a></h2>
                 </div>
             </div>
         </div>
