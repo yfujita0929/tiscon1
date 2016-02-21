@@ -6,7 +6,9 @@
         <div class="col-md-12">
             <div id="main-slider">
                 <div class="item">
+
                     <img class="img-responsive" src="img/index-img3.jpg" alt="">
+
                 </div>
                 <div class="item">
                     <img class="img-responsive" src="img/index-img2.jpg" alt="">
@@ -78,7 +80,9 @@ _________________________________________________________ -->
         </div>
         <div class="container">
             <div class="product-slider">
-                <#list movieRank as item>
+    <#list movieRank as item>
+
+
                     <div class="item">
                         <div class="product">
                             <div class="flip-container">
@@ -109,6 +113,7 @@ _________________________________________________________ -->
                         </div>
                         <!-- /.product -->
                     </div>
+
                 </#list>
 
             </div>
@@ -125,6 +130,7 @@ _________________________________________________________ -->
         </div>
         <div class="container">
             <div class="product-slider">
+
                 <#list musicRank as item>
                     <div class="item">
                         <div class="product">
@@ -162,6 +168,7 @@ _________________________________________________________ -->
             <!-- /.product-slider -->
         </div>
         <!-- /.container -->
+
     </div>
 
     <!-- /#hot -->
